@@ -56,7 +56,7 @@ module.exports = function container (get, set, clear) {
           s.signal = !s.acted_on_trend ? 'buy' : null
           s.cancel_down = false
         }
-        else if (!s.cancel_down && s.period.trend_ema_rate < (s.period.trend_ema_stddev * -1)) {
+        else if (!s.cancel_down && s.period.trend_ema_rate < s.period.trend_ema_stddev) {
           if (s.trend !== 'down') {
             s.acted_on_trend = false
           }
